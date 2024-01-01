@@ -6,7 +6,7 @@ import { courseReducers } from "../reducers/courseReducer";
 import { profileReducer } from "../reducers/profileReducer";
 import { subscriptionReducer } from "../reducers/subscriptionReducer";
 
-export const server = "https://codeninja-backend-mern.vercel.app/api/v1";
+export const server = "https://backend-mern-codeninja.vercel.app/api/v1";
 // export const server = "http://localhost:4000/api/v1";
 
 const store = configureStore({
