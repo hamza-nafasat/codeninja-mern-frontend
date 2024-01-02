@@ -101,9 +101,9 @@ const Dashboard = () => {
 								qtypercentage={subscriptionsPercentage}
 							/>
 						</Stack>
-						{/*=============== PREGRESS BAR =============== */}
 						<Grid templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]}>
-							<Box p={4} m={4}>
+							{/*=============== PREGRESS BAR =============== */}
+							<Box p={4} m={4} py={[4, 4, 8, 6]}>
 								<Heading
 									textAlign={"center"}
 									size={"lg"}
@@ -120,7 +120,12 @@ const Dashboard = () => {
 								/>
 							</Box>
 							{/*===============  DOUGHNUT GRAPH =============== */}
-							<Box maxW={"350px"} mx={"auto"} boxSizing="border-box" py={4}>
+							<Box
+								maxW={"350px"}
+								mx={"auto"}
+								boxSizing="border-box"
+								py={[4, 4, 8, 6]}
+							>
 								<Heading
 									textAlign={"center"}
 									size={"lg"}
