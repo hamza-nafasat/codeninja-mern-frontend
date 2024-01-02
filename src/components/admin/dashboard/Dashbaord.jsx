@@ -103,7 +103,13 @@ const Dashboard = () => {
 						</Stack>
 						<Grid templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]}>
 							{/*=============== PREGRESS BAR =============== */}
-							<Box p={4} m={4} py={[4, 4, 8, 6]} my={[6, 16]}>
+							<Box
+								p={4}
+								m={4}
+								py={[4, 4, 8, 6]}
+								marginTop={[2, 4, 8, 16]}
+								my={[6, 16]}
+							>
 								<Heading
 									textAlign={"center"}
 									size={"lg"}
@@ -125,6 +131,7 @@ const Dashboard = () => {
 								mx={"auto"}
 								boxSizing="border-box"
 								py={[4, 4, 8, 6]}
+								marginTop={[2, 4, 8, 16]}
 								my={[6, 16]}
 							>
 								<Heading
@@ -146,6 +153,7 @@ const Dashboard = () => {
 							px={[2, 4, 8, 8]}
 							py={[4, 4, 8, 6]}
 							my={[6, 16]}
+							mx={[2, 0]}
 							boxShadow={"-2px 0 10px rgba(107,70,193,0.5) "}
 						>
 							<Heading
