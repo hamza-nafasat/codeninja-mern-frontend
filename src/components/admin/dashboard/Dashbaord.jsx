@@ -1,5 +1,14 @@
 import Sidebar from "../Sidebar";
-import { Box, Grid, HStack, Heading, Progress, Stack, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+	Box,
+	Grid,
+	HStack,
+	Heading,
+	Progress,
+	Stack,
+	Text,
+	useColorModeValue,
+} from "@chakra-ui/react";
 import cursor from "../../../assets/images/cursor.png";
 import DataBox from "./DataBox";
 import { DoughnutChart, LineChart } from "./Graph";
@@ -41,14 +50,20 @@ const Dashboard = () => {
 		dispatch(getAdminStats());
 	}, [dispatch]);
 	return (
-		<Grid css={{ cursor: `url(${cursor}), default` }} minH={"100vh"} templateColumns={["1fr", "1fr", "5fr 1fr"]}>
+		<Grid
+			css={{ cursor: `url(${cursor}), default` }}
+			minH={"100vh"}
+			templateColumns={["1fr", "1fr", "5fr 1fr"]}
+		>
 			<Box boxSizing="border-box" py={[2, 8]}>
 				{stats?.length > 0 && (
 					<Text
 						textAlign={"center"}
 						opacity={0.5}
 						fontSize={["12px"]}
-						children={`Last change was on ${String(new Date(stats[11].updatedAt)).split("G")[0]} `}
+						children={`Last change was on ${
+							String(new Date(stats[11].updatedAt)).split("G")[0]
+						} `}
 					/>
 				)}
 				<Heading
@@ -86,6 +101,38 @@ const Dashboard = () => {
 								qtypercentage={subscriptionsPercentage}
 							/>
 						</Stack>
+						{/*=============== PREGRESS BAR =============== */}
+						<Grid templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]}>
+							<Box p={4} m={4}>
+								<Heading
+									textAlign={"center"}
+									size={"lg"}
+									color={useColorModeValue("yellow.600", "teal.500")}
+									mb={2}
+									children="Progress bar"
+								/>
+								<Bar title="Users" value={usersCounts} profit={usersProfit} />
+								<Bar title="Views" value={viewsCounts} profit={viewsProfit} />
+								<Bar
+									title="Subscription"
+									value={subscriptionsCounts}
+									profit={subscriptionsPercentage}
+								/>
+							</Box>
+							{/*===============  DOUGHNUT GRAPH =============== */}
+							<Box maxW={"350px"} mx={"auto"} boxSizing="border-box" py={4}>
+								<Heading
+									textAlign={"center"}
+									size={"lg"}
+									color={useColorModeValue("yellow.600", "teal.500")}
+									mb={2}
+									children="Users Graph"
+								/>
+								<DoughnutChart
+									data={[subscriptionsCounts, usersCounts - subscriptionsCounts]}
+								/>
+							</Box>
+						</Grid>
 						{/* =============== VIEWS GRAPH =============== */}
 						<Box
 							m={[2, 4, 8, 16]}
@@ -104,40 +151,6 @@ const Dashboard = () => {
 							/>
 							<LineChart views={stats?.map((item) => item.views)} />
 						</Box>
-
-						{/*=============== PREGRESS BAR =============== */}
-
-						<Grid templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]}>
-							<Box p={4} m={4}>
-								<Heading
-									textAlign={"center"}
-									size={"lg"}
-									color={useColorModeValue("yellow.600", "teal.500")}
-									mb={2}
-									children="Progress bar"
-								/>
-								<Bar title="Users" value={usersCounts} profit={usersProfit} />
-								<Bar title="Views" value={viewsCounts} profit={viewsProfit} />
-								<Bar
-									title="Subscription"
-									value={subscriptionsCounts}
-									profit={subscriptionsPercentage}
-								/>
-							</Box>
-
-							{/*===============  DOUGHNUT GRAPH =============== */}
-
-							<Box maxW={"350px"} mx={"auto"} boxSizing="border-box" py={4}>
-								<Heading
-									textAlign={"center"}
-									size={"lg"}
-									color={useColorModeValue("yellow.600", "teal.500")}
-									mb={2}
-									children="Users Graph"
-								/>
-								<DoughnutChart data={[subscriptionsCounts, usersCounts - subscriptionsCounts]} />
-							</Box>
-						</Grid>
 					</>
 				)}
 			</Box>
