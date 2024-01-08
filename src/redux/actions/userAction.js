@@ -48,7 +48,7 @@ export const logout = () => async (dispatch) => {
 	const axiosConfig = { withCredentials: true };
 	try {
 		dispatch({ type: "logoutRequest" });
-		const { data } = await axios.get(`${server}/logout`, axiosConfig);
+		const { data } = await axios.post(`${server}/logout`, "", axiosConfig);
 		dispatch({ type: "logoutSuccess", payload: data.message });
 	} catch (error) {
 		const errorMessage = error.response ? error.response.data.message : "Something went wrong";
@@ -79,7 +79,11 @@ export const resetpassword = (password, token) => async (dispatch) => {
 	};
 	try {
 		dispatch({ type: "resetPasswordRequest" });
-		const { data } = await axios.put(`${server}/resetpassword/${token}`, { password }, axiosConfig);
+		const { data } = await axios.put(
+			`${server}/resetpassword/${token}`,
+			{ password },
+			axiosConfig
+		);
 		dispatch({ type: "resetPasswordSuccess", payload: data.message });
 	} catch (error) {
 		const errorMessage = error.response ? error.response.data.message : "Something went wrong";
@@ -109,7 +113,10 @@ export const removeFromPlaylist = (courseId) => async (dispatch) => {
 	};
 	try {
 		dispatch({ type: "removeFromPlaylistRequest" });
-		const { data } = await axios.delete(`${server}/removefromplaylist?courseId=${courseId}`, axiosConfig);
+		const { data } = await axios.delete(
+			`${server}/removefromplaylist?courseId=${courseId}`,
+			axiosConfig
+		);
 		dispatch({ type: "removeFromPlaylistSuccess", payload: data.message });
 	} catch (error) {
 		const errorMessage = error.response ? error.response.data.message : "Something went wrong";
