@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./components/home/Home";
@@ -45,7 +45,7 @@ function App() {
 		}
 	}, [dispatch, error, message]);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		dispatch(loadUser());
 		dispatch(getAllCourses());
 	}, [dispatch]);
@@ -69,10 +69,7 @@ function App() {
 						<Route
 							path="/signup"
 							element={
-								<ProtectedRoute
-									isAuthenticated={!isAuthenticated}
-									redirect="/profile"
-								>
+								<ProtectedRoute isAuthenticated={!isAuthenticated} redirect="/profile">
 									<Signup />
 								</ProtectedRoute>
 							}
@@ -80,10 +77,7 @@ function App() {
 						<Route
 							path="/login"
 							element={
-								<ProtectedRoute
-									isAuthenticated={!isAuthenticated}
-									redirect="/profile"
-								>
+								<ProtectedRoute isAuthenticated={!isAuthenticated} redirect="/profile">
 									<Login />
 								</ProtectedRoute>
 							}
@@ -91,10 +85,7 @@ function App() {
 						<Route
 							path="/forgetpassword"
 							element={
-								<ProtectedRoute
-									isAuthenticated={!isAuthenticated}
-									redirect="/profile"
-								>
+								<ProtectedRoute isAuthenticated={!isAuthenticated} redirect="/profile">
 									<ForgetPassword />
 								</ProtectedRoute>
 							}
@@ -102,10 +93,7 @@ function App() {
 						<Route
 							path="/resetpassword/:token"
 							element={
-								<ProtectedRoute
-									isAuthenticated={!isAuthenticated}
-									redirect="/profile"
-								>
+								<ProtectedRoute isAuthenticated={!isAuthenticated} redirect="/profile">
 									<ResetPassword />
 								</ProtectedRoute>
 							}
