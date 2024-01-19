@@ -28,26 +28,50 @@ const Footer = () => {
 							Follow Us
 						</Heading>
 						<HStack spacing={4} fontSize="1.5rem">
-							<a href="https://github.com/hamzaNafasat" target="blank">
+							<a
+								aria-label="My github account"
+								href="https://github.com/hamzaNafasat"
+								target="blank"
+							>
 								<BsGithub />
 							</a>
-							<a href="https://www.instagram.com/crazy_hami_" target="blank">
+							<a
+								aria-label="My instagram account"
+								href="https://www.instagram.com/crazy_hami_"
+								target="blank"
+							>
 								<BsInstagram />
 							</a>
 						</HStack>
 						<HStack spacing={4} fontSize="1.5rem">
-							<a href="https://www.google.com" target="blank">
+							<a
+								aria-label="google account"
+								href="https://www.google.com"
+								target="blank"
+							>
 								<BsGoogle />
 							</a>
-							<a href="https://www.youtube.com" target="blank">
+							<a
+								aria-label="youtube account"
+								href="https://www.youtube.com"
+								target="blank"
+							>
 								<BsYoutube />
 							</a>
 						</HStack>
 						<HStack spacing={4} fontSize="1.5rem">
-							<a href="https://www.facebook.com" target="blank">
+							<a
+								aria-label="facebook account"
+								href="https://www.facebook.com"
+								target="blank"
+							>
 								<BsFacebook />
 							</a>
-							<a href="https://www.twitter.com" target="blank">
+							<a
+								aria-label="twitter account"
+								href="https://www.twitter.com"
+								target="blank"
+							>
 								<BsTwitter />
 							</a>
 						</HStack>
@@ -56,8 +80,8 @@ const Footer = () => {
 
 				<Box mt={[4, 4, 2, 0]} textAlign="center">
 					<Text fontSize="sm">
-						&copy; {new Date().getFullYear()} Hamza-Nafasat All rights reserved | Terms of Service | Privacy
-						Policy
+						&copy; {new Date().getFullYear()} Hamza-Nafasat All rights reserved | Terms of
+						Service | Privacy Policy
 					</Text>
 				</Box>
 			</Box>

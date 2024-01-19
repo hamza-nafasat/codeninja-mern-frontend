@@ -1,5 +1,13 @@
 import { Link } from "react-router-dom";
-import { Button, useDisclosure, VStack, Box, HStack, IconButton, useColorMode } from "@chakra-ui/react";
+import {
+	Button,
+	useDisclosure,
+	VStack,
+	Box,
+	HStack,
+	IconButton,
+	useColorMode,
+} from "@chakra-ui/react";
 import {
 	Drawer,
 	DrawerBody,
@@ -38,6 +46,7 @@ const Header = ({ isAuthenticated = false, user }) => {
 	return (
 		<Box maxW={"1440px"}>
 			<IconButton
+				title="Title"
 				position={"fixed"}
 				top={3}
 				left={[1, 3]}
@@ -65,7 +74,12 @@ const Header = ({ isAuthenticated = false, user }) => {
 						mt={"1.2rem"}
 					/>
 					<DrawerBody>
-						<VStack fontFamily={"sans-serif"} size="40px" spacing={4} alignItems={"flex-start"}>
+						<VStack
+							fontFamily={"sans-serif"}
+							size="40px"
+							spacing={4}
+							alignItems={"flex-start"}
+						>
 							<LinkButton url="/" title="Home" onClick={onClose} />
 							<LinkButton url="/courses" title="Courses" onClick={onClose} />
 							<LinkButton url="/about" title="About Us" onClick={onClose} />
@@ -116,11 +130,21 @@ const Header = ({ isAuthenticated = false, user }) => {
 						) : (
 							<HStack width={"full"} justify={"space-around"}>
 								<Link to={"/login"}>
-									<Button minW={"100px"} onClick={onClose} colorScheme="yellow" children="Login" />
+									<Button
+										minW={"100px"}
+										onClick={onClose}
+										colorScheme="yellow"
+										children="Login"
+									/>
 								</Link>
 
 								<Link to={"/signup"}>
-									<Button onClick={onClose} colorScheme="yellow" minW={"100px"} children="Sign Up" />
+									<Button
+										onClick={onClose}
+										colorScheme="yellow"
+										minW={"100px"}
+										children="Sign Up"
+									/>
 								</Link>
 							</HStack>
 						)}

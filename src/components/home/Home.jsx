@@ -39,8 +39,8 @@ const Home = () => {
 						textShadow={"2px 2px 4px rgba(0, 0, 0, 0.2)"}
 					/>
 					<Text maxW={"450px"}>
-						Discover valuable content at an affordable price. Start your learning
-						journey today with CodeNinjas!
+						Discover valuable content at an affordable price. Start your learning journey
+						today with CodeNinjas!
 					</Text>
 					<Link to="/courses">
 						<Button
@@ -56,8 +56,13 @@ const Home = () => {
 					className="bgImage"
 					boxSize={["60%", "50%"]}
 					src={bgImage}
+					alt="a lamp image"
 					objectFit={"contain"}
 					cursor={"pointer"}
+					sizes="(max-width: 600px) 300px,
+            				(max-width: 1200px) 600px,
+            				1200px"
+					loading="lazy"
 				/>
 			</Stack>
 		</Box>
