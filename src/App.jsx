@@ -29,12 +29,6 @@ import AdminCourses from "./components/admin/admincourses/AdminCourses";
 import CreateCourse from "./components/admin/createcourse/CreateCourse";
 import Users from "./components/admin/users/Users";
 import Loader from "./components/layout/Loader";
-import toast, { Toaster } from "react-hot-toast";
-import { loadUser } from "./redux/actions/userAction";
-import { useDispatch, useSelector } from "react-redux";
-import { ProtectedRoute } from "protected-route-react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { getAllCourses } from "./redux/actions/courseAction";
 
 // const Header = lazy(() => import("./components/layout/Header"));
 // const Footer = lazy(() => import("./components/layout/Footer"));
