@@ -51,7 +51,7 @@ function App() {
 
 	return (
 		<Router>
-			<Suspense fallback={<Loader />}>
+			<Suspense>
 				<Header isAuthenticated={isAuthenticated} user={user} />
 				{loading ? (
 					<Loader />
