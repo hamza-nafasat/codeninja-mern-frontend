@@ -36,6 +36,30 @@ import { ProtectedRoute } from "protected-route-react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { getAllCourses } from "./redux/actions/courseAction";
 
+// const Header = lazy(() => import("./components/layout/Header"));
+// const Footer = lazy(() => import("./components/layout/Footer"));
+// const Home = lazy(() => import("./components/home/Home"));
+// const Contact = lazy(() => import("./components/contact/Contact"));
+// const About = lazy(() => import("./components/about/About"));
+// const Courses = lazy(() => import("./components/courses/Courses"));
+// const CoursePage = lazy(() => import("./components/courses/CoursePage"));
+// const Request = lazy(() => import("./components/request/Request"));
+// const Login = lazy(() => import("./components/auth/Login"));
+// const Signup = lazy(() => import("./components/auth/Signup"));
+// const ForgetPassword = lazy(() => import("./components/auth/ForgetPassword"));
+// const ResetPassword = lazy(() => import("./components/auth/ResetPassword"));
+// const Subscribe = lazy(() => import("./components/payments/Subscribe"));
+// const PaymentFail = lazy(() => import("./components/payments/PaymentFail"));
+// const PaymentSuccess = lazy(() => import("./components/payments/PaymentSuccess"));
+// const NotFound = lazy(() => import("./components/layout/NotFound"));
+// const Profile = lazy(() => import("./components/profile/Profile"));
+// const ChangePassword = lazy(() => import("./components/profile/ChangePassword"));
+// const UpdateProfile = lazy(() => import("./components/profile/UpdateProfile"));
+// const Dashboard = lazy(() => import("./components/admin/dashboard/Dashbaord"));
+// const AdminCourses = lazy(() => import("./components/admin/admincourses/AdminCourses"));
+// const CreateCourse = lazy(() => import("./components/admin/createcourse/CreateCourse"));
+// const Users = lazy(() => import("./components/admin/users/Users"));
+
 function App() {
 	const { isAuthenticated, user, message, error, loading } = useSelector((state) => state.user);
 	const dispatch = useDispatch();
